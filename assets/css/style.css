@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --pl-purple: #37003c;   /* Tím than Premier League */
+    --pl-green: #00ff85;    /* Xanh neon Premier League */
+    --pl-pink: #e90052;     /* Hồng điểm nhấn */
+    --pl-gray: #f8f9fa;
+    --text-dark: #242424;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Vân nền nhẹ */
+    color: var(--text-dark);
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: var(--pl-purple) !important;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-left: 20px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--pl-green) !important;
+}
+
+.btn-login-custom {
+    border: 2px solid var(--pl-green);
+    color: var(--pl-green) !important;
+    border-radius: 20px;
+    padding: 5px 25px;
+    transition: 0.3s;
+}
+
+.btn-login-custom:hover {
+    background-color: var(--pl-green);
+    color: var(--pl-purple) !important;
+}
+
+/* --- CARD TRẬN ĐẤU (MATCH CARD) --- */
+.match-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 6px solid var(--pl-purple); /* Mặc định tím */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.match-card h5 {
+    font-size: 1.1rem;     /* Tăng cỡ chữ tên đội */
+    font-weight: 800;      /* Chữ đậm */
+    margin-bottom: 0;      /* Bỏ khoảng trắng thừa */
+    line-height: 1.4;
+}
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(55, 0, 60, 0.15);
+}
+
+.match-card.live {
+    border-left-color: var(--pl-green); /* Đang đá hoặc sắp đá màu xanh */
+}
+
+/* Logo giả lập (Hình tròn màu) */
+.team-logo-placeholder {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--pl-purple);
+    font-size: 14px;
+    border: 2px solid #ddd;
+}
+
+/* Tỷ số dạng viên thuốc */
+.score-pill {
+    background-color: var(--pl-purple);
+    color: var(--pl-green);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.4rem;
+    min-width: 100px;
+    display: inline-block;
+}
+
+/* Nút Highlight */
+.btn-highlight {
+    color: var(--pl-purple);
+    border: 1px solid var(--pl-purple);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 15px;
+    margin-top: 10px;
+}
+
+.btn-highlight:hover {
+    background-color: var(--pl-purple);
+    color: white;
+}
+
+/* Tiêu đề trang */
+.page-title {
+    color: var(--pl-purple);
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--pl-green);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/* Bảng thống kê */
+.table-custom thead {
+    background-color: var(--pl-purple);
+    color: white;
+}
+.table-custom tbody tr:hover {
+    background-color: rgba(0, 255, 133, 0.1);
+}
+/* --- BẢNG XẾP HẠNG (STANDINGS) --- */
+.table-custom {
+    border-collapse: separate; 
+    border-spacing: 0;
+}
+
+.table-custom thead th {
+    background-color: #f0f0f0; /* Màu xám nhạt cho tiêu đề */
+    color: #666;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 10px;
+}
+
+.table-custom tbody td {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    padding: 15px 10px;
+    font-size: 0.95rem;
+}
+
+/* Cột Điểm số */
+.points-cell {
+    color: var(--pl-purple);
+    font-weight: 800 !important;
+    background-color: #fcfcfc !important; /* Nổi bật cột điểm */
+}
+
+/* Logo nhỏ trong bảng */
+.team-logo-mini {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--pl-purple);
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+/* Top 1: Viền xanh bên trái */
+.rank-1 {
+    border-left: 4px solid var(--pl-green) !important;
+    color: var(--pl-purple);
+}
+
+/* Đội chót bảng: Viền đỏ */
+.rank-last {
+    border-left: 4px solid var(--pl-pink) !important;
+}
+/* --- FORM GUIDE (5 trận gần nhất) --- */
+.form-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.form-win {
+    background-color: #28a745; /* Xanh lá (Thắng) */
+}
+
+.form-draw {
+    background-color: #6c757d; /* Xám (Hòa) */
+}
+
+.form-loss {
+    background-color: #dc3545; /* Đỏ (Thua) */
+}
+
+/* Tùy chỉnh lại bảng cho giống ảnh */
+.table-pl thead th {
+    font-size: 0.8rem;
+    color: #666;
+    border-bottom: 2px solid #dee2e6;
+    padding: 12px 8px;
+}
+
+.table-pl tbody td {
+    vertical-align: middle;
+    padding: 12px 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.team-name-cell {
+    font-weight: 600;
+    color: #242424;
+}
+
+/* Cột điểm số đậm hơn */
+.points-col {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
+}
+/* Logo trong thẻ trận đấu (Kết quả & Lịch thi đấu) */
+
+.team-logo-match {
+    width: 50px !important;    /* Đã giảm từ 80px xuống 50px */
+    height: 50px !important;   /* Chiều cao tương ứng */
+    object-fit: contain;       /* Giữ ảnh không bị méo */
+    margin: 0 10px;            /* Khoảng cách với tên đội */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); 
+    transition: transform 0.3s ease;
+}
+
+.team-logo-match:hover {
+    transform: scale(1.2);     /* Di chuột vào phóng to lên chút cho đẹp */
+}
+
+/* Responsive cho mobile: Logo nhỏ hơn nữa */
+@media (max-width: 768px) {
+    .team-logo-match {
+        width: 40px !important;
+        height: 40px !important;
+        margin: 0 5px;
+    }
+    
+    .match-card h5 {
+        font-size: 0.85rem; 
+    }
+}
+/* --- LINK ĐẾN TRANG CHI TIẾT CLB --- */
+a.team-link {
+    text-decoration: none;      /* Bỏ gạch chân mặc định */
+    color: inherit;             /* Giữ nguyên màu đen/xám của chữ */
+    transition: color 0.2s;
+}
+
+a.team-link:hover {
+    color: var(--pl-purple) !important; /* Di chuột vào chuyển màu Tím */
+    text-decoration: underline;         /* Hiện gạch chân */
+    font-weight: 800;                   /* Chữ đậm hơn chút */
+}
+/* --- THANH TIN VẮN (NEWS TICKER) --- */
+.breaking-news-bar {
+    background-color: #e90052; /* Màu hồng đỏ đặc trưng Premier League / VLeague */
+    color: white;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.news-label {
+    background-color: white;
+    color: #e90052;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+.news-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.news-link:hover {
+    color: #ffdfeb;
+    text-decoration: underline;
+}
+
+/* --- KHỐI TIN TỨC Ở CUỐI --- */
+.news-card-img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+.news-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--pl-purple);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- PHẦN NHÀ TÀI TRỢ (SPONSORS) --- */
+.sponsors-section {
+    background-color: #fff;
+    border-top: 4px solid var(--pl-green);
+    padding: 40px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sponsor-logo {
+    height: 60px;
+    width: auto;
+    margin: 0 20px;
+    filter: grayscale(100%); /* Làm xám logo cho sang */
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+.sponsor-logo:hover {
+    filter: grayscale(0%); /* Di chuột vào thì hiện màu */
+    opacity: 1;
+    transform: scale(1.1);
+}
